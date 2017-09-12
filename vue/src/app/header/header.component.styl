@@ -1,34 +1,66 @@
 .header 
-    padding 5% 0% 3% 0%
-    div.col-md-5
-        h1
+    padding 4% 0% 3% 0%
+
+    .row .logo
+        width 215px
+        height 215px
+        margin-right 60px
+    .row .text
+        h1  
+            display none
+        h2
             font-family 'Source Sans Pro', sans-serif
-            line-height 150%
+            line-height 135%
             margin-bottom 40px
+            font-weight 300
+            font-size 45px
         button.started
             border-radius 50px
             border-style solid 
             border-width 1px
-            border-color #4FC08D
-            background-color #4FC08D
+            border-color #42b983
+            background-color #42b983
             color #ffffff
             padding 10px 40px 10px 40px
-            font-family 'Open Sans', sans-serif
+            font-family sans-serif
             font-size 14px
-            font-weight 600
-            font-stretch expanded
 
         button.github
             margin-left 15px
             border-radius 50px
             border-style solid 
             border-width 1px
-            border-color #4FC08D
+            border-color #42b983
             background-color #ffffff
-            color #4FC08D
+            color #42b983
             padding 10px 40px 10px 40px
-            font-family 'Open Sans', sans-serif
+            font-family sans-serif
             font-size 14px
-            font-weight 600
-            font-stretch expanded
 
+@media (max-width: 600px)
+    .header .row
+        margin 0
+        .logo
+            width 140px
+            height 140px
+            margin 0 0 20px 0
+            display block
+        .text
+            text-align center
+            display block
+            h1  
+                display inline
+                font-family 'Source Sans Pro', sans-serif
+                font-size 35px
+                text-align center
+                color #2C3E50
+            h2
+                font-size 26px
+                text-align center
+                margin 20px 0 15px 0
+            .button.started
+                padding 10px 20px 10px 20px
+                font-size 13px
+            .button.github
+                padding 10px 20px 10px 20px
+                font-size 13px
