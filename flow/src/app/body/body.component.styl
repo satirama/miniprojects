@@ -3,8 +3,24 @@
         font-size 48px
         color #2D343A
         font-weight 800
+    div.deco
+        width 50px
+        margin -15px  
+        border-bottom 50px solid red  
+        border-left 50px solid red
+        border-right 50px solid transparent
+        border-top 50px solid transparent
+        z-index 1
+    div.deco::after
+        content ""
+        margin -5px  
+        border-bottom 50px solid green  
+        border-left 50px solid green
+        border-right 50px solid transparent
+        border-top 50px solid transparent
+        z-index -1
     .code
-        padding 4% 0 4% 0
+        padding 4% 0 5% 0
         p  
             font-size 22px
             color #666666
@@ -14,6 +30,18 @@
             display inline
     .code.smarter
         background-color #EEEEEE
+    .code.smarter:before
+        background-color #EEEEEE
+        content ""
+        position relative
+        top 0px
+        right 0px
+        width 50px
+        margin 30px  
+        border-bottom 50px solid green  
+        border-left 50px solid green
+        border-right 50px solid transparent
+        border-top 50px solid transparent
     .code.confident
         background-color #2D343A
         h2 
@@ -23,24 +51,49 @@
     .get
         padding 6% 0 4% 0
         background-color #E8BD36
-        button
-            margin 22px 30px 0 0
-            padding 15px 25px 15px 25px
-            border-radius 0
-            background-color #ffffff
-            color #2D343A
-            border none 
+        .col-md-2
+            padding 0
+            margin 22px 30px 0 0 
+            button
+                border-radius 0
+                background-color #ffffff
+                color #2D343A
+                border none 
+                font-weight 800
+                font-size 25px
+            button:hover
+                background-color #2D343A
+                color #E8BD36
+    .features
+        color #55595C
+        padding 5% 0 7% 0
+        h3 
+            margin-top 30px
+            font-size 30px
             font-weight 800
-            font-size 25px
-        button:hover
-            background-color #2D343A
-            color #E8BD36
+        p    
+            font-size 17px
+
 @media (max-width 900px)
     .body 
-        .code   
+        h2  
+            font-size 40px
+        .code 
+            padding 70px 0 70px 0  
             .col-12
                 display inline
             .col-md-4.col-sm-12
                 display inline
             .col-md-4
                 display none
+        .get
+            padding 10% 0 8% 0  
+            .col-md-2
+                margin 22px 20px 0 20px
+                button.install
+                    display none
+                button.start 
+                    display block
+        .features
+            h3   
+                margin-top 20px
