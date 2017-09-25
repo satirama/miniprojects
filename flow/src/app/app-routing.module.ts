@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'docs',
     component: DocsComponent
+  },
+  {
+    path: 'getting-started',
+    component: StartedComponent
   }
 ];
 
