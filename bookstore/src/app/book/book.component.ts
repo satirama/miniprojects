@@ -8,12 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BookComponent implements OnInit {
 
   @Input()
-    title: string;
+    title: any;
   @Input()
     url: string;
   @Input()
     rating: string;
-
+  @Input()
+    author: any;
+  @Input()
+    id: any;
+ 
   constructor() { }
 
   ngOnInit() {

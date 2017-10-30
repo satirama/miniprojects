@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     d3.csv('./assets/books.csv', (error, data) => {
-      this.booklist = data.filter((el) => el.original_title.length > 0); // elimino observaciones que no tienen título
+      this.booklist = data; 
     })
   }
 
@@ -34,7 +34,14 @@ export class HomeComponent implements OnInit {
 
   aSort(){
     this.booklist.sort((a,b) => d3.descending(a.authors, b.authors));
-    console.log(this.booklist[0].original_title);
+  }
+
+  titleSort(){
+    this.booklist.sort((a,b) => d3.ascending(a.title, b.title));
+  }
+
+  tSort(){
+    this.booklist.sort((a,b) => d3.descending(a.title, b.title));
   }
 
 }
