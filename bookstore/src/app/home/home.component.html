@@ -14,10 +14,10 @@
   </div>
   <div class="row d-flex justify-content-center align-items-center">
     <div class="col-md-3 col-sm-6" *ngFor="let book of booklist | slice:0:20">
-      
+      <a [routerLink]="['/details', book.id]" routerLinkActive="active">
         <app-book [id]="book?.id" [title]="book?.title" [url]="book?.image_url" [author]="book?.authors" [rating]="book?.average_rating">
         </app-book>
-      
+      </a>
     </div>
   </div>
 </div>

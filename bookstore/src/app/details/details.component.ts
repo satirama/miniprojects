@@ -9,13 +9,15 @@ import * as d3 from 'd3';
 })
 export class DetailsComponent implements OnInit {
 
-  bookId: any;
+  bookId: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params=> {this.bookId = params['id']});
-    console.log(this.bookId);
+    /*d3.csv('./assets/books.csv', (error, data) => {
+      this.booklist = data; 
+    })*/
   }
 
 }
