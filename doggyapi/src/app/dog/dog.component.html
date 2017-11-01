@@ -1,6 +1,6 @@
 <div class="container-fluid galeria">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-2 text-center" *ngFor = "let url of allPictures.message">
+  <div class="row d-flex justify-content-around align-items-center">
+    <div class="pic col-2 text-center" *ngFor = "let url of allPictures.message | slice:0:60">
       <img src='{{url}}'>
     </div>
   </div>
