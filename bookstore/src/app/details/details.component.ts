@@ -10,14 +10,40 @@ import * as d3 from 'd3';
 export class DetailsComponent implements OnInit {
 
   bookId: string;
+  book: any;
+  ratings= [];
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params=> {this.bookId = params['id']});
-    /*d3.csv('./assets/books.csv', (error, data) => {
-      this.booklist = data; 
-    })*/
+    d3.csv('./assets/books.csv', (error, data) => {
+      this.book = data.filter((el) => { 
+        this.route.params.subscribe(params=> {this.bookId = params['id']});
+        return el.id == this.bookId})[0];
+        console.log(this.book)
+        this.ratings.push(100 * this.book.ratings_1 / this.book.work_ratings_count);
+        this.ratings.push(100 * this.book.ratings_2 / this.book.work_ratings_count);
+        this.ratings.push(100 * this.book.ratings_3 / this.book.work_ratings_count);
+        this.ratings.push(100 * this.book.ratings_4 / this.book.work_ratings_count);
+        this.ratings.push(100 * this.book.ratings_5 / this.book.work_ratings_count);
+    });
+
+    d3.select('#graph')
+      .selectAll('rect')
+      .data(this.ratings)
+      .enter()
+      .append('rect')
+      .attr('x',(d, i)=>{
+        return i * 50;
+      })
+      .attr('y',(d, i) => {
+        return 100 - d 
+      })
+      .attr('width', '30')
+      .attr('height', function(d){
+        return d;
+      })
+      .attr('fill', '#cdcdcd')
   }
 
 }
