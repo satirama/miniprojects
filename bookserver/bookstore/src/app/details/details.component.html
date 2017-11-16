@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="back col-10 text-center">
+      <button type="button" class="btn btn-outline-info" (click)="goHome()">back</button>      
+    </div>
+    <div class="col-md-4 col-sm-12 text-center">
+      <img class="img-fluid" [src]="book?.image_url">
+    </div>
+    <div class="info col-md-4 col-sm-12">
+      <h2>{{book?.original_title}}</h2>
+      <p>{{book?.authors}}</p>
+      <p>{{book?.original_publication_year/1}}</p>
+      <p>ISBN: {{book?.isbn}}</p>
+      <p>ISBN-13: {{book?.isbn13/1}}</p>
+      <p>rating: {{book?.average_rating}}    <i class="fa fa-star" aria-hidden="true"></i></p>
+      <div>
+        <svg id="graph" width="300" height="210"></svg>
+      </div>
+    </div>
+  </div>
+</div>

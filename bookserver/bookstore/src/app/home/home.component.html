@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="sort row d-flex justify-content-center align-items-center">
+    <div class="col-12 text-center">
+      <p>sort by:</p>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-outline-info" (click)="ratingSort()">rating top</button>
+      <button type="button" class="btn btn-outline-info" (click)="rSort()">rating worst</button>
+      <button type="button" class="btn btn-outline-info" (click)="authorSort()">author (a-z)</button>
+      <button type="button" class="btn btn-outline-info" (click)="aSort()">author (z-a)</button>
+      <button type="button" class="btn btn-outline-info" (click)="titleSort()">title (a-z)</button>
+      <button type="button" class="btn btn-outline-info" (click)="tSort()"><title></title>title (z-a)</button>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-md-3 col-sm-6" *ngFor="let book of booklist | slice:0:20">
+      <a [routerLink]="['/details', book.id]" routerLinkActive="active">
+        <app-book [id]="book?.id" [title]="book?.title" [url]="book?.image_url" [author]="book?.authors" [rating]="book?.average_rating">
+        </app-book>
+      </a>
+    </div>
+  </div>
+</div>
