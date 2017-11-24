@@ -10,6 +10,9 @@ export class GifComponent implements OnInit {
   @Input() 
   url: string;
 
+  @Input()
+  ref: string;
+
   constructor() { }
 
   ngOnInit() {

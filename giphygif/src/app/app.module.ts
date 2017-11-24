@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { TituloComponent } from './titulo/titulo.component';
 import { GifComponent } from './gif/gif.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
     HomeComponent,
     TituloComponent,
     GifComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
